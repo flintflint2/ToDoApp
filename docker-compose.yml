@@ -30,7 +30,7 @@ services:
     working_dir: /app
     command: sh -c "npm install && npm run dev"
     environment:
-      VITE_API_URL: ${VITE_API_URL:-http://localhost:8080/api}
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
     volumes:
       - ./frontend:/app
     ports:

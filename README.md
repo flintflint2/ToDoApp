@@ -46,7 +46,5 @@ Errors: `400`/`404`/`500` as `{"error": "..."}`. Title is trimmed, 1–200 chars
 
 ## Notes
 
-- The default `VITE_API_URL` is `/api` (relative, works with the Vite proxy). Because the API
-  routes already live under `/api/todos`, a value like `http://localhost:8080` in the sandbox
-  would produce `/todos` paths; the frontend therefore treats `VITE_API_URL` as the base that
-  `/todos` is appended to, so set it to `http://localhost:8080/api`.
+- `VITE_API_URL` may be given with or without the `/api` suffix (`http://localhost:8080` and
+  `http://localhost:8080/api` are equivalent); `/api` is appended when missing.

@@ -6,7 +6,9 @@ export interface Todo {
   updatedAt: string;
 }
 
-const BASE = (import.meta.env.VITE_API_URL as string | undefined) || '/api';
+const RAW = ((import.meta.env.VITE_API_URL as string | undefined) || '/api').replace(/\/+$/, '');
+// Accept both "http://host:8080" and "http://host:8080/api"
+const BASE = RAW.endsWith('/api') ? RAW : RAW + '/api';
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let res: Response;
